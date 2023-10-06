@@ -41,8 +41,11 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-
-  background-color: var(--clr-bunker);
+  height: 200px;
+  padding: 10px;
+  background-image: url('http://drive.google.com/uc?export=view&id=1vuUP43EiqgQuPyrWXzMAPtKiyy_U8w9M');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .nav__brand {
@@ -58,6 +61,7 @@ nav {
 
 .nav__brand h1 {
   color: var(--clr-white);
+  -webkit-text-stroke: 1px black;
   font-family: "Lalezar";
   font-size: 2.5em;
 }
@@ -65,7 +69,7 @@ nav {
 .nav__links {
   background-color: var(--clr-ebony-clay);
   grid-column: 1 / span 3;
-
+  margin: 0 450px 0 450px;
   padding: 10px;
 
   display: flex;
@@ -82,6 +86,7 @@ nav {
 .nav__links li a {
   text-decoration: none;
   color: var(--clr-white);
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 .nav__links li a:hover {
@@ -103,7 +108,8 @@ nav {
   height: 40px;
   margin: 0 auto;
 
-  background-color: var(--clr-orange);
+  /*background-color: var(--clr-orange);*/
+  background-color: var(--clr-white);
   color: var(--clr-black);
 
   border: none;
@@ -118,7 +124,8 @@ nav {
 }
 
 .nav__connect:hover {
-  background-color: var(--clr-orange-dark);
+  /*background-color: var(--clr-orange-dark);*/
+  background-color: var(--clr-white)
 }
 
 /* ------------------------------------------------------ */
@@ -315,7 +322,7 @@ nav {
   border: 1px solid var(--clr-grey);
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1262px) {
   .product__details {
     height: 95%;
     width: 90%;
@@ -327,9 +334,21 @@ nav {
     margin-top: 20px;
     grid-column: span 2;
   }
+
+  .nav__links {
+    margin: 0 350px 0 350px;
+  }
+
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width:1234px){
+  .nav__links {
+    margin: 0 320px 0 320px;
+  }
+
+}
+
+@media screen and (max-width: 850px) {
   nav {
     grid-template-columns: repeat(2, 1fr);
   }
