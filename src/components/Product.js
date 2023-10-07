@@ -20,12 +20,11 @@ const Product = ({ item, provider, account, aynimarket, togglePop }) => {
     if(orders.length === 0) return
     const order = await aynimarket.orders(account, orders[0].args.orderId)
     setOrder(order)
+  } 
   
-  }
-
   const buyHandler = async () => {
     const signer = await provider.getSigner()
-    let transaction = aynimarket.connect(signer).buy(item.id, {value: item.cost})
+    let transaction = await aynimarket.connect(signer).buy(item.id, {value: item.cost})
     await transaction.wait()
     
     setHasBought(true)

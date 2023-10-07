@@ -34,7 +34,6 @@ function App() {
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     setProvider(provider)
     const network = await provider.getNetwork()
-    console.log(network)
 
     //Conect to smart contract ()
     const aynimarket= new ethers.Contract(config[network.chainId].aynimarket.address, Aynimarket, provider)
