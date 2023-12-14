@@ -14,7 +14,8 @@ const Product = ({ item, provider, account, aynimarket, togglePop }) => {
   const fetchDetails = async () => {
     const events = await aynimarket.queryFilter("Buy")
     const orders = events.filter(
-      (event) => event.arg.buyer === account && event.args.itemId.toString()=== item.id.toString()
+      (event) =>
+        event.args.buyer === account && event.args.itemId.toString()=== item.id.toString(),
     )
 
     if(orders.length === 0) return
@@ -24,14 +25,17 @@ const Product = ({ item, provider, account, aynimarket, togglePop }) => {
   
   const buyHandler = async () => {
     const signer = await provider.getSigner()
-    let transaction = await aynimarket.connect(signer).buy(item.id, {value: item.cost})
+    let transaction = aynimarket.connect(signer).buy(item.id, {value: item.cost})
     await transaction.wait()
+    console.log(transaction)
     
     setHasBought(true)
   
   }
 
-  useEffect(() => {fetchDetails()},[hasBought])
+  useEffect(() => {
+    fetchDetails()
+  },[hasBought])
 
   return (
     <div className="product">
@@ -41,7 +45,7 @@ const Product = ({ item, provider, account, aynimarket, togglePop }) => {
         </div>
         <div className='product__overview'>
           <h1>{item.name}</h1>
-          <Rating rating={item.rating} />
+          <Rating value={item.rating} />
           <hr></hr>
           <p>{item.address}</p>
           <h2>{ethers.utils.formatUnits(item.cost.toString(), 'ether')} ETH</h2>
@@ -82,7 +86,6 @@ const Product = ({ item, provider, account, aynimarket, togglePop }) => {
                     second:'numeric'
                   }
                 )}
-
               </strong>
             </div>
           )}
