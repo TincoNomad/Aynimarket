@@ -9,33 +9,29 @@ import close from '../assets/close.svg'
 const Product = ({ item, provider, account, aynimarket, togglePop }) => {
 
   const[order, setOrder] = useState(null)
-  const[hasBought, setHasBought] = useState(false)
-
-  const fetchDetails = async () => {
-    const events = await aynimarket.queryFilter("Buy")
-    const orders = events.filter(
-      (event) =>
-        event.args.buyer === account && event.args.itemId.toString()=== item.id.toString(),
-    )
-
-    if(orders.length === 0) return
-    const order = await aynimarket.orders(account, orders[0].args.orderId)
-    setOrder(order)
-  } 
   
   const buyHandler = async () => {
     const signer = await provider.getSigner()
     let transaction = aynimarket.connect(signer).buy(item.id, {value: item.cost})
     await transaction.wait()
     console.log(transaction)
-    
-    setHasBought(true)
   
   }
-
-  useEffect(() => {
-    fetchDetails()
-  },[hasBought])
+    useEffect(() => {
+      const fetchDetails = async () => {
+        const events = await aynimarket.queryFilter("Buy");
+        const orders = events.filter(
+          (event) =>
+            event.args.buyer === account && event.args.itemId.toString() === item.id.toString(),
+        );
+    
+        if (orders.length === 0) return;
+        const order = await aynimarket.orders(account, orders[0].args.orderId);
+        setOrder(order);
+      };
+    
+      fetchDetails();
+    },[account, aynimarket, item.id, setOrder]);  
 
   return (
     <div className="product">
