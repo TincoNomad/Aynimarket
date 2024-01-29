@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
-// import WalletError from './WalletError'
 
 // Components
 import Rating from './Rating'
