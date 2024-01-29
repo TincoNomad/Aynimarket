@@ -43,7 +43,8 @@ nav {
   align-items: center;
   height: 200px;
   padding: 10px;
-  background-image: url('http://drive.google.com/uc?export=view&id=1vuUP43EiqgQuPyrWXzMAPtKiyy_U8w9M');
+  /* background-image: url('https://drive.google.com/uc?export=view&id=1szxXWXDdWxTxOFJE1oYbnF_pMQhIPABQ'); */
+  background-image: url('/public/Telar2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }

@@ -26,33 +26,37 @@ function App() {
 
   const togglePop = (item) => {
     setItem(item)
-    toggle? setToggle(false) : setToggle(true)
+    toggle ? setToggle(false) : setToggle(true)
   }
 
-  const loadBlockchainData = async() => {
-    //Conect blockchain
-    const provider = new ethers.providers.Web3Provider(window.ethereum)
-    setProvider(provider)
-    const network = await provider.getNetwork()
+  const loadBlockchainData = async () => {
 
-    //Conect to smart contract ()
-    const aynimarket= new ethers.Contract(config[network.chainId].aynimarket.address, Aynimarket, provider)
-    setAynimarket(aynimarket)
+    try {
+      //Conect blockchain
+      const provider = new ethers.providers.Web3Provider(window.ethereum)
+      setProvider(provider)
+      const network = await provider.getNetwork()
 
-    //Load products
-    const items = []
-    for (var i = 0; i < 9; i++) {
-      const item= await aynimarket.items(i + 1)
-      items.push(item)
+      //Conect to smart contract ()
+      const aynimarket = new ethers.Contract(config[network.chainId].aynimarket.address, Aynimarket, provider)
+      setAynimarket(aynimarket)
+
+      //Load products
+      const items = []
+      for (var i = 0; i < 9; i++) {
+        const item = await aynimarket.items(i + 1)
+        items.push(item)
+      }
+      const electronics = items.filter((item) => item.category === 'electronics')
+      const clothing = items.filter((item) => item.category === 'clothing')
+      const toys = items.filter((item) => item.category === 'toys')
+
+      setElectronics(electronics)
+      setClothing(clothing)
+      setToys(toys)
+    } catch (error) {
+      console.error('Error loading blockchain data:', error);
     }
-    const electronics = items.filter((item) => item.category === 'electronics')
-    const clothing = items.filter((item) => item.category === 'clothing')
-    const toys = items.filter((item) => item.category === 'toys')
-
-    setElectronics(electronics)
-    setClothing(clothing)
-    setToys(toys)
-    
   }
 
   useEffect(() => {
@@ -61,22 +65,22 @@ function App() {
 
   return (
     <div>
-      <Navigation account={account} setAccount={setAccount}/>
+      <Navigation account={account} setAccount={setAccount} />
 
       <h2>Aynimarket Best Sellers</h2>
 
 
-      {electronics && clothing && toys &&(
+      {electronics && clothing && toys && (
         <>
-          <Section title={"Clothing & Jewelry"} items={clothing} togglePop = {togglePop}/>
-          <Section title={"Electronics $ Gadgets"} items={electronics} togglePop = {togglePop}/>
-          <Section title={"Toys & Gaming"} items={toys} togglePop = {togglePop}/>
+          <Section title={"Clothing & Jewelry"} items={clothing} togglePop={togglePop} account={account}/>
+          <Section title={"Electronics $ Gadgets"} items={electronics} togglePop={togglePop} account={account}/>
+          <Section title={"Toys & Gaming"} items={toys} togglePop={togglePop} account={account}/>
         </>
       )}
 
       {toggle && (
-        <Product item={item} provider={provider} account={account} aynimarket={aynimarket} togglePop={togglePop}/>
-     
+        <Product item={item} provider={provider} account={account} aynimarket={aynimarket} togglePop={togglePop} />
+
       )}
 
     </div>
