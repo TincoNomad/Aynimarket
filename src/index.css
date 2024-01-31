@@ -109,7 +109,6 @@ nav {
   height: 40px;
   margin: 0 auto;
 
-  /*background-color: var(--clr-orange);*/
   background-color: var(--clr-white);
   color: var(--clr-black);
 
@@ -125,8 +124,53 @@ nav {
 }
 
 .nav__connect:hover {
-  /*background-color: var(--clr-orange-dark);*/
-  background-color: var(--clr-white)
+  background-color: #707070
+}
+
+.wallet__connect {
+  width: 150px;
+  height: 40px;
+  margin: 0 auto;
+
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+
+  border: none;
+  border-radius: 4px;
+
+  font-family: "Lalezar";
+  font-size: 1.25em;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 250ms ease;
+}
+
+.nav__disconnect{
+  font-weight: bold;
+  color:#FFFFFF;
+  -webkit-text-stroke: 1px black;
+  cursor: pointer;
+}
+.nav__disconnect:hover{
+  background-color: #707070a4;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 10px;
+}
+
+.connect__buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.connect__secton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
 }
 
 /* ------------------------------------------------------ */

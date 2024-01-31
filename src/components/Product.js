@@ -14,9 +14,9 @@ const Product = ({ item, provider, account, aynimarket, togglePop }) => {
 
     try {
       const signer = await provider.getSigner()
+      console.log(" => Signer", signer);
       let transaction = aynimarket.connect(signer).buy(item.id, { value: item.cost })
-      // await transaction.wait()
-      // console.log(" => Transacción exitosa", transaction)
+      console.log(" => Transacción pendiente", transaction);
       if (transaction.hash) {
         await transaction.wait();
         console.log(" => Transacción exitosa", transaction);
@@ -25,10 +25,6 @@ const Product = ({ item, provider, account, aynimarket, togglePop }) => {
       }
     } catch (error) {
       console.error('Error al realizar la compra:', error);
-
-      if (error.message.includes('unknown account #0 (operation="getAddress", code=UNSUPPORTED_OPERATION')) {
-        console.error('Error: unknown account #0 (operation="getAddress", code=UNSUPPORTED_OPERATION)');
-      }
     }
   }
   useEffect(() => {
@@ -64,7 +60,7 @@ const Product = ({ item, provider, account, aynimarket, togglePop }) => {
           <Rating value={item.rating} />
           <hr></hr>
           <p>{item.address}</p>
-          <h2>{ethers.utils.formatUnits(item.cost.toString(), 'ether')} ETH</h2>
+          <h2>{ethers.utils.formatUnits(item.cost.toString(), 'ether')} MATIC</h2>
           <hr></hr>
           <h2>Overwiew</h2>
           <p>
@@ -76,7 +72,7 @@ const Product = ({ item, provider, account, aynimarket, togglePop }) => {
           </p>
         </div>
         <div className='product__order'>
-          <h1>{ethers.utils.formatUnits(item.cost.toString(), 'ether')} ETH</h1>
+          <h1>{ethers.utils.formatUnits(item.cost.toString(), 'ether')} MATIC</h1>
           <p>
             FREE delivery <br />
             <strong>

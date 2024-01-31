@@ -5,7 +5,7 @@
       "name": "Camera",
       "category": "electronics",
       "image": "https://ipfs.io/ipfs/QmTYEboq8raiBs7GTUg2yLXB3PMz6HuBNgNfSZBx5Msztg/camera.jpg",
-      "price": "1",
+      "price": "0.1",
       "rating": 4,
       "stock": 10
     },
@@ -14,7 +14,7 @@
       "name": "Drone",
       "category": "electronics",
       "image": "https://ipfs.io/ipfs/QmTYEboq8raiBs7GTUg2yLXB3PMz6HuBNgNfSZBx5Msztg/drone.jpg",
-      "price": "2",
+      "price": "0.2",
       "rating": 5,
       "stock": 6
     },
@@ -23,7 +23,7 @@
       "name": "Headset",
       "category": "electronics",
       "image": "https://ipfs.io/ipfs/QmTYEboq8raiBs7GTUg2yLXB3PMz6HuBNgNfSZBx5Msztg/headset.jpg",
-      "price": "0.25",
+      "price": "0.025",
       "rating": 2,
       "stock": 24
     },
@@ -32,7 +32,7 @@
       "name": "Shoes",
       "category": "clothing",
       "image": "https://ipfs.io/ipfs/QmTYEboq8raiBs7GTUg2yLXB3PMz6HuBNgNfSZBx5Msztg/shoes.jpg",
-      "price": "0.25",
+      "price": "0.025",
       "rating": 5,
       "stock": 3
     },
@@ -41,7 +41,7 @@
       "name": "Sunglasses",
       "category": "clothing",
       "image": "https://ipfs.io/ipfs/QmTYEboq8raiBs7GTUg2yLXB3PMz6HuBNgNfSZBx5Msztg/sunglasses.jpg",
-      "price": "0.10",
+      "price": "0.01",
       "rating": 4,
       "stock": 12
     },
@@ -50,7 +50,7 @@
       "name": "Watch",
       "category": "clothing",
       "image": "https://ipfs.io/ipfs/QmTYEboq8raiBs7GTUg2yLXB3PMz6HuBNgNfSZBx5Msztg/watch.jpg",
-      "price": "1.25",
+      "price": "0.125",
       "rating": 4,
       "stock": 0
     },
@@ -59,7 +59,7 @@
       "name": "Puzzle Cube",
       "category": "toys",
       "image": "https://ipfs.io/ipfs/QmTYEboq8raiBs7GTUg2yLXB3PMz6HuBNgNfSZBx5Msztg/cube.jpg",
-      "price": "0.05",
+      "price": "0.005",
       "rating": 4,
       "stock": 15
     },
@@ -68,7 +68,7 @@
       "name": "Train Set",
       "category": "toys",
       "image": "https://ipfs.io/ipfs/QmTYEboq8raiBs7GTUg2yLXB3PMz6HuBNgNfSZBx5Msztg/train.jpg",
-      "price": "0.20",
+      "price": "0.02",
       "rating": 4,
       "stock": 0
     },
@@ -77,7 +77,7 @@
       "name": "Robot Set",
       "category": "toys",
       "image": "https://ipfs.io/ipfs/QmTYEboq8raiBs7GTUg2yLXB3PMz6HuBNgNfSZBx5Msztg/robots.jpg",
-      "price": "0.15",
+      "price": "0.015",
       "rating": 3,
       "stock": 12
     }

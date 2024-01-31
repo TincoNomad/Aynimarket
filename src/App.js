@@ -67,7 +67,7 @@ function App() {
     <div>
       <Navigation account={account} setAccount={setAccount} />
 
-      <h2>Aynimarket Best Sellers</h2>
+      <h2>Aynimarket Best Sellers - MATIC</h2>
 
 
       {electronics && clothing && toys && (
