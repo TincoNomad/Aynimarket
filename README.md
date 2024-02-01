@@ -8,9 +8,11 @@
 
 ## Polygon Mumbai 
 
-💻 This is a small project that let you buy items on the polygon testnet, mumbai. Try it out on https://tinconomad.github.io/Aynimarket/
+💻 This is a small project that let you buy items on the polygon testnet, mumbai.
 
-<p>You will found:</p>
+<p>Try it out on https://tinconomad.github.io/Aynimarket/ 🚀</p> 
+
+<p>In the code, you will found:</p>
 
 - Smart Contract
 - Main proyect
