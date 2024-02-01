@@ -2,10 +2,9 @@
 
 
 # Aynimarket
-  ![Static Badge](https://img.shields.io/badge/React.js%20-%20blue)
-  ![Static Badge](https://img.shields.io/badge/Solidity%20-%20gray)
-  ![Static Badge](https://img.shields.io/badge/HardHat%20-%20yellow)
-
+![Static Badge](https://img.shields.io/badge/-React-blue)
+![Static Badge](https://img.shields.io/badge/-Solidity-gray)
+![Static Badge](https://img.shields.io/badge/-HardHat-yellow)
 
 ## Polygon Mumbai 
 
