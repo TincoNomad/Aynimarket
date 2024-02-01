@@ -1,4 +1,17 @@
+![](./public/Telar.jpg)
+![Static Badge](https://img.shields.io/badge/React.js%20-%20blue)
+![Static Badge](https://img.shields.io/badge/Solidity%20-%20gray)
+![Static Badge](https://img.shields.io/badge/HardHat%20-%20yellow)
+
 # Aynimarket
+
+## Polygon Mumbai 
+
+💻 This is a small project that let you buy items on the polygo testnet, bumbai. 
+<p>You will found:</p>
+- Smart Contract
+- test
+- main proyect 
 
 ## Technology Stack & Tools
 
@@ -15,7 +28,7 @@
 ### 1. Clone/Download the Repository
 
 ### 2. Install Dependencies:
-`$ npm install`
+`$ npm install` or `$ yarn`
 
 ### 3. Run tests
 `$ npx hardhat test`
