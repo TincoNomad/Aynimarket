@@ -6,7 +6,7 @@
 ![Static Badge](https://img.shields.io/badge/-Solidity-gray)
 ![Static Badge](https://img.shields.io/badge/-HardHat-yellow)
 
-## Polygon Mumbai 
+## Polygon Mumbai - As Mumbay has recently changed to Amoy, the frontend of this project is not available
 
 💻 This is a small project that let you buy items on the polygon testnet, mumbai.
 
